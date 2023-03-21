@@ -7,14 +7,10 @@ namespace HelloWorld
         //Do Not modify this function
         static int Main(string[] args)
         {
-            if (test().ToString() == "test")
+            if (FunctionName().ToString() == ExpectedOutput)
                 return 1;
             return 0;
         }
-        static string test()
-        {
-
-
-        }
+        static Function
     }
 }

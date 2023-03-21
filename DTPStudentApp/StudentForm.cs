@@ -32,6 +32,7 @@ namespace DTPStudentApp
             //In future this should be set b4 hand
             loadedLessonFile[0].setChallangeExpectedOutput("\"test\"", "test", "string");
             loadedLessonFile[0].hideMainFunction = true;
+            loadedLessonFile[0].completed = false;
 
         }
         private void saveLessonFile(string path, List<Lesson> lessons)
@@ -88,12 +89,12 @@ namespace DTPStudentApp
             if (File.Exists("code.exe"))
             {
                 (string stdOut, int exitCode) processOutput = runProcess("code.exe", "");
-                compilerBlock.Text += processOutput.stdOut;
+                compilerBlock.Text += "\n"+processOutput.stdOut;
                 if (selected == null)
                     return;
                 if (processOutput.exitCode == 1)
                 {
-
+                    compilerBlock.Text += "\nWell Done you've completed this challenge";
                     selected.lesson.completed = true;
                     selected.completed();
                 }

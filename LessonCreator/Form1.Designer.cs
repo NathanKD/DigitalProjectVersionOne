@@ -73,7 +73,9 @@
             this.codeBlock.Name = "codeBlock";
             this.codeBlock.Size = new System.Drawing.Size(302, 512);
             this.codeBlock.TabIndex = 1;
-            this.codeBlock.Text = "";
+            this.codeBlock.Text = "using System;\nnamespace HelloWorld\n{\n    class Program\n    {\n        static void " +
+    "Main(string[] args)\n        {\n            Console.WriteLine(\"Hello World!\");    " +
+    "\n        }\n    }\n}";
             this.codeBlock.Leave += new System.EventHandler(this.lessonUpdate);
             // 
             // splitContainer2
@@ -99,9 +101,9 @@
             // 
             this.lessonContent.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lessonContent.Enabled = false;
-            this.lessonContent.Location = new System.Drawing.Point(0, 47);
+            this.lessonContent.Location = new System.Drawing.Point(0, 37);
             this.lessonContent.Name = "lessonContent";
-            this.lessonContent.Size = new System.Drawing.Size(450, 465);
+            this.lessonContent.Size = new System.Drawing.Size(450, 475);
             this.lessonContent.TabIndex = 1;
             this.lessonContent.Text = "";
             this.lessonContent.Leave += new System.EventHandler(this.lessonUpdate);
@@ -145,6 +147,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "LessonPlanner";
             this.Text = "Lesson Planner";
+            this.Load += new System.EventHandler(this.LessonPlanner_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

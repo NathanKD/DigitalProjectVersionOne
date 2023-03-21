@@ -9,3 +9,13 @@ C:\Users\natha\source\repos\DTPStudentApp\LessonCreator\obj\Debug\LessonCreator.
 C:\Users\natha\source\repos\DTPStudentApp\LessonCreator\obj\Debug\LessonCreator.exe
 C:\Users\natha\source\repos\DTPStudentApp\LessonCreator\obj\Debug\LessonCreator.pdb
 C:\Users\natha\source\repos\DTPStudentApp\LessonCreator\obj\Debug\LessonCreator.LessonPlanner.resources
+C:\Users\nathan.kleinedeters\source\repos\DigitalProjectVersionOne-main\LessonCreator\bin\Debug\LessonCreator.exe.config
+C:\Users\nathan.kleinedeters\source\repos\DigitalProjectVersionOne-main\LessonCreator\bin\Debug\LessonCreator.exe
+C:\Users\nathan.kleinedeters\source\repos\DigitalProjectVersionOne-main\LessonCreator\bin\Debug\LessonCreator.pdb
+C:\Users\nathan.kleinedeters\source\repos\DigitalProjectVersionOne-main\LessonCreator\obj\Debug\LessonCreator.csprojAssemblyReference.cache
+C:\Users\nathan.kleinedeters\source\repos\DigitalProjectVersionOne-main\LessonCreator\obj\Debug\LessonCreator.LessonPlanner.resources
+C:\Users\nathan.kleinedeters\source\repos\DigitalProjectVersionOne-main\LessonCreator\obj\Debug\LessonCreator.Properties.Resources.resources
+C:\Users\nathan.kleinedeters\source\repos\DigitalProjectVersionOne-main\LessonCreator\obj\Debug\LessonCreator.csproj.GenerateResource.cache
+C:\Users\nathan.kleinedeters\source\repos\DigitalProjectVersionOne-main\LessonCreator\obj\Debug\LessonCreator.csproj.CoreCompileInputs.cache
+C:\Users\nathan.kleinedeters\source\repos\DigitalProjectVersionOne-main\LessonCreator\obj\Debug\LessonCreator.exe
+C:\Users\nathan.kleinedeters\source\repos\DigitalProjectVersionOne-main\LessonCreator\obj\Debug\LessonCreator.pdb
