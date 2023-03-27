@@ -39,7 +39,6 @@ namespace DTPStudentApp
             this.defaultCode = defaultCode.Replace("FunctionName", functionOutName);
             this.defaultCode = defaultCode.Replace("ExpectedOutput", exptectedOutput);
             this.defaultCode = defaultCode.Replace("Function", $"{functionType} {functionOutName}()\n        {{\n\n\n        }}");
-            Console.WriteLine(defaultCode);
         }
     }
     //Extend the Default C# button class to include a refernce to a lesson

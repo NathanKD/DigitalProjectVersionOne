@@ -13,8 +13,18 @@ namespace HelloWorld
         }
         static string test()
         {
-
-
+	return "test";
+ 
         }
     }
 }
+
+
+
+
+
+
+
+
+
+

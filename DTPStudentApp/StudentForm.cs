@@ -32,7 +32,7 @@ namespace DTPStudentApp
             //In future this should be set b4 hand
             loadedLessonFile[0].setChallangeExpectedOutput("\"test\"", "test", "string");
             loadedLessonFile[0].hideMainFunction = true;
-            loadedLessonFile[0].completed = false;
+            loadedLessonFile[0].lessonContent = "For this test lesson please make the \nfunction test return the string \"test\"";
 
         }
         private void saveLessonFile(string path, List<Lesson> lessons)
@@ -42,19 +42,19 @@ namespace DTPStudentApp
             formatter.Serialize(fileStream, lessons);
             fileStream.Close();
         }
-        private List<Lesson> loadLessonFile(string path, bool initButtons = true)
+        private List<Lesson> loadLessonFile(string path)
         {
             IFormatter formatter = new BinaryFormatter();
             Stream fileStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
             List<Lesson> serializedLessons = (List<Lesson>)formatter.Deserialize(fileStream);
             fileStream.Close();
-            if (!initButtons)
-                return serializedLessons;
+
             foreach (Lesson les in serializedLessons)
             {
                 LessonButton b = new LessonButton(les);
                 b.Size = new Size(infoLessonContainer.Panel2.Width, 40);
                 b.MouseClick += lessonSelect;
+                b.Text = les.lessonName;
 
                 if (les.completed)
                     b.completed();
@@ -89,12 +89,12 @@ namespace DTPStudentApp
             if (File.Exists("code.exe"))
             {
                 (string stdOut, int exitCode) processOutput = runProcess("code.exe", "");
-                compilerBlock.Text += "\n"+processOutput.stdOut;
+                compilerBlock.Text += processOutput.stdOut;
                 if (selected == null)
                     return;
                 if (processOutput.exitCode == 1)
                 {
-                    compilerBlock.Text += "\nWell Done you've completed this challenge";
+
                     selected.lesson.completed = true;
                     selected.completed();
                 }
