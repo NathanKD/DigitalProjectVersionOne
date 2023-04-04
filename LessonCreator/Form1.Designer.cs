@@ -33,6 +33,7 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.lessonContent = new System.Windows.Forms.RichTextBox();
             this.LessonTitle = new System.Windows.Forms.TextBox();
+            this.openLesson = new System.Windows.Forms.Button();
             this.lessonButtons = new System.Windows.Forms.ListView();
             this.newLesson = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -89,6 +90,7 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.openLesson);
             this.splitContainer2.Panel2.Controls.Add(this.lessonButtons);
             this.splitContainer2.Panel2.Controls.Add(this.newLesson);
             this.splitContainer2.Size = new System.Drawing.Size(602, 512);
@@ -118,6 +120,16 @@
             this.LessonTitle.Text = "New Lesson";
             this.LessonTitle.Leave += new System.EventHandler(this.lessonUpdate);
             // 
+            // openLesson
+            // 
+            this.openLesson.Location = new System.Drawing.Point(91, 474);
+            this.openLesson.Name = "openLesson";
+            this.openLesson.Size = new System.Drawing.Size(57, 38);
+            this.openLesson.TabIndex = 3;
+            this.openLesson.Text = "Load Lesson";
+            this.openLesson.UseVisualStyleBackColor = true;
+            this.openLesson.Click += new System.EventHandler(this.openLesson_Click);
+            // 
             // lessonButtons
             // 
             this.lessonButtons.HideSelection = false;
@@ -131,7 +143,7 @@
             // 
             this.newLesson.Location = new System.Drawing.Point(0, 474);
             this.newLesson.Name = "newLesson";
-            this.newLesson.Size = new System.Drawing.Size(148, 38);
+            this.newLesson.Size = new System.Drawing.Size(94, 38);
             this.newLesson.TabIndex = 1;
             this.newLesson.Text = "New Lesson";
             this.newLesson.UseVisualStyleBackColor = true;
@@ -145,6 +157,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "LessonPlanner";
             this.Text = "Lesson Planner";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LessonPlanner_FormClosing);
             this.Load += new System.EventHandler(this.LessonPlanner_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -168,6 +181,7 @@
         private System.Windows.Forms.RichTextBox lessonContent;
         private System.Windows.Forms.Button newLesson;
         private System.Windows.Forms.ListView lessonButtons;
+        private System.Windows.Forms.Button openLesson;
     }
 }
 

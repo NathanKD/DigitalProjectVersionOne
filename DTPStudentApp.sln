@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTPStudentApp", "DTPStudent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonCreator", "LessonCreator\LessonCreator.csproj", "{6F95663D-C583-4E7F-B409-2264E03E22EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeacherTool", "TeacherTool\TeacherTool.csproj", "{6C89564B-D74A-4F7D-AD31-13395465312B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6F95663D-C583-4E7F-B409-2264E03E22EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F95663D-C583-4E7F-B409-2264E03E22EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F95663D-C583-4E7F-B409-2264E03E22EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C89564B-D74A-4F7D-AD31-13395465312B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C89564B-D74A-4F7D-AD31-13395465312B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C89564B-D74A-4F7D-AD31-13395465312B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C89564B-D74A-4F7D-AD31-13395465312B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
