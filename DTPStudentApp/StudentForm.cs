@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
+using System.Windows.Media.Imaging;
+using System.Xml.Linq;
+using SocketIOClient;
+using Woof.SystemEx;
 
 namespace DTPStudentApp
 {
@@ -15,8 +20,29 @@ namespace DTPStudentApp
         private LessonButton selected = null;
         private List<Lesson> loadedLessonFile;
         private string loadedLessonFileName;
+        private string token;
         public StudentApp()
         {
+            FileStream cache = new FileStream("./cache", FileMode.OpenOrCreate);
+            byte[] buffer = new byte[12];
+            cache.Read(buffer, 0, 12);
+            
+            if (buffer[11] == '\0')
+            {
+                buffer = genNewToken();
+                cache.Write(buffer, 0, 12);
+            }
+            token = String.Concat(buffer);
+
+
+            SocketIO socket = new SocketIO("https://learningappserver.nathankleine1.repl.co");
+            Dictionary<string, string> headers = new Dictionary<string, string>();
+            headers.Add("token",token);
+
+            socket.Options.ExtraHeaders = headers;
+            socket.OnConnected += connectionEstablished;
+            socket.ConnectAsync();
+
             InitializeComponent();
             //Lesson testLesson = new Lesson("lessonName", "Test Lesson", "This is a test lesson", defaultCode);
             //List<Lesson> lessons = new List<Lesson>();
@@ -34,6 +60,27 @@ namespace DTPStudentApp
             loadedLessonFile[0].hideMainFunction = true;
             loadedLessonFile[0].lessonContent = "For this test lesson please make the \nfunction test return the string \"test\"";
 
+        }
+        private void connectionEstablished(object Sender, EventArgs e)
+        {
+            SocketIO socket = (SocketIO)Sender;
+            socket.On("getUserProfile", res =>
+            {
+                //https://stackoverflow.com/questions/5570113/c-sharp-how-to-get-current-user-picture
+                Bitmap userPfp = new Bitmap(SysInfo.GetUserPicturePath());
+                //use JPG in later version 
+                //https://stackoverflow.com/questions/7350679/convert-a-bitmap-into-a-byte-array
+                ImageConverter converter = new ImageConverter();    
+                socket.EmitAsync("returnUserProfile", new object[]{ Environment.UserName, (byte[])converter.ConvertTo(userPfp, typeof(byte[])) });
+            });
+            Console.WriteLine("Connected");
+        }
+        private byte[] genNewToken()
+        {
+            byte[] rnd = new byte[12];
+            Random r = new Random();
+            r.NextBytes(rnd);
+            return rnd;
         }
         private void saveLessonFile(string path, List<Lesson> lessons)
         {
@@ -94,7 +141,6 @@ namespace DTPStudentApp
                     return;
                 if (processOutput.exitCode == 1)
                 {
-
                     selected.lesson.completed = true;
                     selected.completed();
                 }

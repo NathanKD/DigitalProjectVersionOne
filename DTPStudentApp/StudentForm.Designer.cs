@@ -108,6 +108,8 @@ namespace DTPStudentApp
             // 
             // compilerBlock
             // 
+            this.compilerBlock.BackColor = System.Drawing.SystemColors.Window;
+            this.compilerBlock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.compilerBlock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.compilerBlock.Location = new System.Drawing.Point(0, 0);
             this.compilerBlock.Name = "compilerBlock";
@@ -126,7 +128,7 @@ namespace DTPStudentApp
             // 
             // infoLessonContainer.Panel1
             // 
-            this.infoLessonContainer.Panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.infoLessonContainer.Panel1.BackColor = System.Drawing.SystemColors.Window;
             this.infoLessonContainer.Panel1.Controls.Add(this.lessonContent);
             this.infoLessonContainer.Panel1.Controls.Add(this.lessonTitle);
             this.infoLessonContainer.Panel1.Controls.Add(this.hideLessonButton);
@@ -193,7 +195,7 @@ namespace DTPStudentApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.Run);
             this.Controls.Add(this.splitContainer1);
